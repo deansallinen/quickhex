@@ -7,10 +7,14 @@
     		confetti.create(document.getElementById("canvas"), {
       			resize: true,
       			useWorker: true
-    })({ particleCount: 200, spread: 200, origin: { y: 0.45 } });
-    hex = genHex();
-  });
+    		})({ particleCount: 200, spread: 200, origin: { y: 0.45 } });
+    		hex = genHex();
+  	});
 </script>
+
+<svelte:head>
+  <title>QuickHex</title>
+</svelte:head>
 
 <main>
 {#if hex}
