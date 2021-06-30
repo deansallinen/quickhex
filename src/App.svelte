@@ -1,5 +1,6 @@
 <script>
 	import confetti from "canvas-confetti";
+	import { fade } from "svelte/transition";
 	const genHex = () => `0x${Math.floor(Math.random() * 256**3).toString(16).padStart(6, '0')}`
 	let hex;
 	onMount(() => {
