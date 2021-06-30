@@ -1,9 +1,20 @@
 <script>
-	const genID = () => `0x${Math.floor(Math.random() * 256**3).toString(16).padStart(6, '0')}`
+	import confetti from "canvas-confetti";
+	const genHex = () => `0x${Math.floor(Math.random() * 256**3).toString(16).padStart(6, '0')}`
+	let hex;
+	onMount(() => {
+    		confetti.create(document.getElementById("canvas"), {
+      			resize: true,
+      			useWorker: true
+    })({ particleCount: 200, spread: 200, origin: { y: 0.45 } });
+    hex = genHex();
+  });
 </script>
 
 <main>
-	<h1>{genID()}</h1>
+{#if hex}
+    <h1 transition:fade={{ duration: 200 }}>{hex}</h1>
+  {/if}
 </main>
 
 <style>
