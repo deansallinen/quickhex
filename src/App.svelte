@@ -1,11 +1,5 @@
 <script>
-  function genID() {
-    let hexCode = "0x" 
-    while ( hexCode.length < 7 ) {
-      hexCode += (Math.round(Math.random() * 15)).toString(16) 
-    }
-    return hexCode 
-  }
+	const genID = () => `0x${Math.floor(Math.random() * 256**3).toString(16).padStart(6, '0')}`
 </script>
 
 <main>
