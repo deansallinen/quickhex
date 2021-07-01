@@ -13,10 +13,6 @@
   	});
 </script>
 
-<svelte:head>
-  <title>QuickHex</title>
-</svelte:head>
-
 <main>
 {#if hex}
     <h1 transition:fade={{ duration: 200 }}>{hex}</h1>
