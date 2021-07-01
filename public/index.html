@@ -16,4 +16,7 @@
 
 <body>
 </body>
+	<script>
+		if (navigator.serviceWorker && !navigator.serviceWorker.controller) { navigator.serviceWorker.register('/serviceworker.js'); }
+	</script>
 </html>
