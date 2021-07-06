@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import confetti from "canvas-confetti";
 	import { fade } from "svelte/transition";
-	const genHex = () => `0x${Math.floor(Math.random() * 256**3).toString(16).padStart(6, '0')}`
+	const genHex = () => `#${Math.floor(Math.random() * 256**3).toString(16).padStart(6, '0')}`
 	let hex;
 	onMount(() => {
     		confetti.create(document.getElementById("canvas"), {
@@ -13,11 +13,11 @@
   	});
 </script>
 
-<main>
 {#if hex}
+<main style="background:{hex}">
     <h1 transition:fade={{ duration: 200 }}>{hex}</h1>
-  {/if}
 </main>
+  {/if}
 
 <style>
   main {
